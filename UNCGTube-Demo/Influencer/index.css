@@ -404,6 +404,28 @@ suggested .video-info p {
 .reply-list li {
     margin-top: 5px; /* Space between replies */
 }
+.like-dislike-buttons {
+    margin: 15px 0;
+}
+
+.like-button, .dislike-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dislike-button {
+    background-color: #f44336; /* Red */
+}
+
 
 
 /* Playlists Section Styling */
