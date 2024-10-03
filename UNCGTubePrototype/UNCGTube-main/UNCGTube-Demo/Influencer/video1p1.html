@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCGTube</title>
+    <link rel="stylesheet" href="index.css"> <!-- Link to the CSS file for styling -->
+</head>
+<body>
+<header>
+    <h1>UNCGTube</h1> <!-- Main title of the website -->
+    <div class="header-search">
+        <input type="text" placeholder="Search videos..."> <!-- Input field for searching videos -->
+        <button type="submit">Search</button> <!-- Button to submit the search -->
+    </div>
+
+    <div class="header-profile">
+        <a href="profile.html"><img src="https://static.vecteezy.com/system/resources/thumbnails/047/119/932/small/disco-ball-on-transparent-background-png.png" alt="Profile"></a> <!-- Profile image that links to the user's profile -->
+    </div>
+</header>
+
+<main>
+    <aside>
+        <h2>Categories</h2> <!-- Sidebar title -->
+        <ul>
+            <li><a href="influencer_home.html">Home</a></li> <!-- Link to home page -->
+            <li><a href="videos.html">Videos</a></li> <!-- Link to videos page -->
+            <li><a href="subscribers.html">Subscribers</a></li> <!-- Link to subscribers page -->
+            <li><a href="analytics.html">Analytics</a></li> <!-- Link to analytics page -->
+            <li><a href="profile.html">Profile</a></li> <!-- Link to profile page -->
+        </ul>
+    </aside>
+
+    <section class="video-player-container">
+        <div class="video-player-section">
+            <div class="video-container">
+                <img src="https://millercenter.org/sites/default/files/2016-12/shutterstock_459439117.jpg" alt="Thumbnail1"> <!-- Video thumbnail -->
+                <div class="video-details">
+                    <h3>Debates</h3> <!-- Title of the video -->
+                    <p class="video-description">Two political figures debating</p> <!-- Short description of the video -->
+                </div>
+            </div>
+
+            <div class="like-dislike-buttons">
+                <button class="like-button">Like</button> <!-- Button to like the video -->
+                <button class="dislike-button">Dislike</button> <!-- Button to dislike the video -->
+            </div>
+
+            <div class="comment-section">
+                <h3>Comments</h3> <!-- Title of the comments section -->
+                <textarea placeholder="Add a public comment..."></textarea> <!-- Input field for adding a comment -->
+                <button type="submit">Comment</button> <!-- Button to submit the comment -->
+                <ul>
+                    <li>
+                        <strong>User1:</strong> Great video! I learned a lot! <!-- Example comment -->
+                        <button class="reply-button">Reply</button> <!-- Button to reply to this comment -->
+                        <button class="report-button">Report</button> <!-- Button to report this comment -->
+                        <ul class="reply-list">
+                            <li><strong>User2:</strong> I agree with the smarter one</li> <!-- A reply to User1's comment -->
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>User3:</strong> I hated their arguments. they suck n i don't like 'em <!-- Example comment -->
+                        <button class="reply-button">Reply</button> <!-- Button to reply to this comment -->
+                        <button class="report-button">Report</button> <!-- Button to report this comment -->
+                        <ul class="reply-list">
+                            <li><strong>User4:</strong> no!</li> <!-- A reply to User3's comment -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <suggested>
+        <div class="suggested-videos">
+            <h3>Suggested Videos</h3> <!-- Title for suggested videos section -->
+            <div class="video-card">
+                <img src="https://d3i6fh83elv35t.cloudfront.net/static/2024/09/2008-10-03T120000Z_1163716022_GM1E4A30Z0P01_RTRMADP_3_USA-POLITICS-DEBATE-1024x756.jpg" alt="Video thumbnail" class="uniform-image"> <!-- Thumbnail for a suggested video -->
+                <div class="video-info">
+                    <h4>Biden shaking someones hand</h4> <!-- Title of the suggested video -->
+                    <p>Views: 1,500</p> <!-- Number of views for the suggested video -->
+                </div>
+            </div>
+            <div class="video-card">
+                <img src="https://yt3.googleusercontent.com/d4B1O0xCl6DJx6h1aZLgLWr4MO5h44f-0JL5qosNoejntdVRoW0OKVk1iLIN_65Ghz1wUF0LeiQ=s160-c-k-c0x00ffffff-no-rj" alt="Video thumbnail" class="uniform-image"> <!-- Thumbnail for a suggested video -->
+                <div class="video-info">
+                    <h4>Pop cultural debates</h4> <!-- Title of the suggested video -->
+                    <p>Views: 1,200</p> <!-- Number of views for the suggested video -->
+                </div>
+            </div>
+            <div class="video-card">
+                <img src="https://www.bates.edu/news/files/2024/01/240115_MLK_Keynote_3649.webp" alt="Video thumbnail" class="uniform-image"> <!-- Thumbnail for a suggested video -->
+                <div class="video-info">
+                    <h4>Sophisticated cooking</h4> <!-- Title of the suggested video -->
+                    <p>Views: 800</p> <!-- Number of views for the suggested video -->
+                </div>
+            </div>
+            <div class="video-card">
+                <img src="https://www.bates.edu/news/files/2024/01/240115_MLK_Keynote_3701.webp" alt="Video thumbnail"> <!-- Thumbnail for a suggested video -->
+                <div class="video-info">
+                    <h4>Sophisticated cooking Part 2!!</h4> <!-- Title of the suggested video -->
+                    <p>Views: 950</p> <!-- Number of views for the suggested video -->
+                </div>
+            </div>
+            <!-- Add more video -->
+        </div>
+    </suggested>
+</main>
+
+<!--<script>-->
+<!--    // Variable to track if the video is liked-->
+<!--    let isLiked = false;-->
+
+<!--    // Get the like button element-->
+<!--    const likeButton = document.getElementById("like-button");-->
+
+<!--    // When the like button is clicked, toggle the like status-->
+<!--    likeButton.addEventListener("click", function() {-->
+<!--        isLiked = !isLiked; // Change the like status-->
+<!--        if (isLiked) {-->
+<!--            likeButton.style.backgroundColor = "#4CAF50"; // Change button color to green when liked-->
+<!--            likeButton.innerText = "Liked!"; // Change button text to show it’s liked-->
+<!--        } else {-->
+<!--            likeButton.style.backgroundColor = ""; // Reset button color-->
+<!--            likeButton.innerText = "Like"; // Reset button text-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->
+
+</body>
+</html>

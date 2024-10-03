@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCGTube</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<header>
+    <h1>UNCGTube</h1>
+    <div class="header-search">
+        <input type="text" placeholder="Search videos...">
+        <button type="submit">Search</button>
+    </div>
+
+    <div class="header-profile">
+        <a href="profile.html"><img src="https://static.vecteezy.com/system/resources/thumbnails/047/119/932/small/disco-ball-on-transparent-background-png.png" alt="Profile"></a>
+    </div>
+
+</header>
+
+
+
+
+<main>
+    <aside>
+        <h2>Categories</h2>
+        <ul>
+            <li><a href="influencer_home.html">Home</a></li>
+            <li><a href="subscribers.html">Subscribers</a></li>
+            <li><a href="analytics.html">Analytics</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="playlists.html">Playlists</a></li>
+
+        </ul>
+    </aside>
+
+    <div class="videos uploaded">
+        <h1>Videos Posted</h1>
+        <div class="video-carousel">
+            <div class="video-item" onclick="location.href='video1p1.html'">
+                <img src="https://millercenter.org/sites/default/files/2016-12/shutterstock_459439117.jpg" alt="Video Thumbnail 1" class="uniform-image">
+                <p>Debate</p>
+            </div>
+            <div class="video-item" onclick="location.href='videoplay.html'">
+                <img src="https://yt3.googleusercontent.com/nA38tmAxC5m1h7gt9J4nEZd28MQkRUb79HnVy0rj_DvPdcQ6cOWCW46Mf3KGXies-kaZOfVT=s160-c-k-c0x00ffffff-no-rj" alt="Video Thumbnail 2" class="uniform-image">
+                <p>Drama</p>
+            </div>
+            <div class="video-item" onclick="location.href='video3p3.html'">
+                <img src="https://media.istockphoto.com/id/1066257882/photo/close-up-young-asian-woman-holding-fried-chicken-with-happy-feeling-at-outside-restaurant-for.jpg?s=612x612&w=0&k=20&c=MiqLYCE5GKrj73RbeXrGX4B2VVjV4HvmxaqvnRaDp6o=" alt="Video Thumbnail 3" class="uniform-image">
+                <p>Chicken</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="upload">
+    <h1>Upload Your Video</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="videoTitle">Title:</label>
+        <input type="text" id="videoTitle" name="videoTitle" placeholder="Enter video title" required>
+
+        <label for="videoDescription">Description:</label>
+        <textarea id="videoDescription" name="videoDescription" rows="4" placeholder="Enter video description" required></textarea>
+
+        <label for="videoFile">Choose Video File:</label>
+        <input type="file" id="videoFile" name="videoFile" accept="video/*" required>
+
+        <button type="submit">Upload Video</button>
+    </form>
+</div>
+
+
+
+</body>
+</html>

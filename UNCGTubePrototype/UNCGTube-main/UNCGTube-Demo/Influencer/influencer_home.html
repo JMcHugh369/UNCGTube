@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCGTube</title>
+    <link rel="stylesheet" href="index.css"> <!-- Link to the external CSS stylesheet -->
+</head>
+<body>
+<header>
+    <h1>UNCGTube</h1> <!-- Main title of the page -->
+    <div class="header-search">
+        <input type="text" placeholder="Search videos..."> <!-- Input field for video search -->
+        <button type="submit">Search</button> <!-- Button to initiate search -->
+    </div>
+
+    <div class="header-profile">
+        <a href="profile.html"><img src="https://static.vecteezy.com/system/resources/thumbnails/047/119/932/small/disco-ball-on-transparent-background-png.png" alt="Profile"></a> <!-- Profile picture linking to the user's profile -->
+    </div>
+</header>
+
+<main>
+    <aside>
+        <h2>Categories</h2> <!-- Sidebar heading -->
+        <ul>
+            <li><a href="videos.html">Videos</a></li> <!-- Link to the videos page -->
+            <li><a href="subscribers.html">Subscribers</a></li> <!-- Link to the subscribers page -->
+            <li><a href="analytics.html">Analytics</a></li> <!-- Link to the analytics page -->
+            <li><a href="profile.html">Profile</a></li> <!-- Link to the profile page -->
+            <li><a href="playlists.html">Playlists</a></li> <!-- Link to the playlists page -->
+        </ul>
+    </aside>
+
+    <div class="videos uploaded">
+        <div class="influencer-info" onclick="location.href='profile.html'"> <!-- Clickable influencer info section -->
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/047/119/932/small/disco-ball-on-transparent-background-png.png" alt="Profile Picture" class="profile-pic"> <!-- Influencer profile picture -->
+            <div class="influencer-details">
+                <h1 class="influencer-name">Disco ball</h1> <!-- Influencer's name -->
+                <p class="influencer-tagline">Learn about me and content subscribe and like my videos</p> <!-- Influencer tagline -->
+                <p class="influencer-tagline">I make debate videos</p> <!-- Description of content type -->
+                <p class="influencer-tagline">I make cooking videos</p> <!-- Another content type description -->
+                <p class="influencer-tagline">Follow me on other platforms</p> <!-- Prompt to follow on other platforms -->
+                <p class="influencer-tagline">Instagram: @Discoball</p> <!-- Instagram handle -->
+                <p class="influencer-tagline">TikTok: @Discoball</p> <!-- TikTok handle -->
+            </div>
+        </div>
+    </div>
+
+    <div class="videos uploaded">
+        <h1>Recent Videos Posted</h1> <!-- Heading for recent videos -->
+        <div class="video-carousel">
+            <div class="video-item" onclick="location.href='video1p1.html'"> <!-- Clickable video item -->
+                <img src="https://millercenter.org/sites/default/files/2016-12/shutterstock_459439117.jpg" alt="Video Thumbnail 1" class="uniform-image"> <!-- Video thumbnail -->
+                <p>Debates</p> <!-- Video title -->
+            </div>
+            <div class="video-item" onclick="location.href='videoplay.html'"> <!-- Clickable video item -->
+                <img src="https://yt3.googleusercontent.com/nA38tmAxC5m1h7gt9J4nEZd28MQkRUb79HnVy0rj_DvPdcQ6cOWCW46Mf3KGXies-kaZOfVT=s160-c-k-c0x00ffffff-no-rj" alt="Video Thumbnail 2" class="uniform-image"> <!-- Video thumbnail -->
+                <p>Drama</p> <!-- Video title -->
+            </div>
+            <div class="video-item" onclick="location.href='video3p3.html'"> <!-- Clickable video item -->
+                <img src="https://yt3.googleusercontent.com/2sm6yhMGg_rh9Qi0GDpBVu0BgGphvqnSo1cjeDXyVp8RuMIKp8lZFeiLC-I7uzPUKmipNkyGOQ=s160-c-k-c0x00ffffff-no-rj" alt="Video Thumbnail 3" class="uniform-image"> <!-- Video thumbnail -->
+                <p>Chicken</p> <!-- Video title -->
+            </div>
+            <!--            add more -->
+        </div>
+    </div>
+</main>
+
+<section class="playlists">
+    <h2>Your Playlists</h2> <!-- Heading for user playlists -->
+    <div class="playlist">
+        <a href="Intoplaylists.html"> <!-- Link to the playlists page -->
+            <h3>Entertainment</h3> <!-- Playlist title -->
+            <div class="video-carousel">
+                <div class="video-item" onclick="location.href='videoplay.html'"> <!-- Clickable video item -->
+                    <img src="https://millercenter.org/sites/default/files/2016-12/shutterstock_459439117.jpg" alt="Video Thumbnail 1" class="uniform-image"> <!-- Video thumbnail -->
+                    <p>Debates</p> <!-- Video title -->
+                </div>
+                <div class="video-item" onclick="location.href='videoplay.html'"> <!-- Clickable video item -->
+                    <img src="https://yt3.googleusercontent.com/nA38tmAxC5m1h7gt9J4nEZd28MQkRUb79HnVy0rj_DvPdcQ6cOWCW46Mf3KGXies-kaZOfVT=s160-c-k-c0x00ffffff-no-rj" alt="Video Thumbnail 2" class="uniform-image"> <!-- Video thumbnail -->
+                    <p>Drama</p> <!-- Video title -->
+                </div>
+                <div class="video-item" onclick="location.href='videoplay.html'"> <!-- Clickable video item -->
+                    <img src="https://yt3.googleusercontent.com/2sm6yhMGg_rh9Qi0GDpBVu0BgGphvqnSo1cjeDXyVp8RuMIKp8lZFeiLC-I7uzPUKmipNkyGOQ=s160-c-k-c0x00ffffff-no-rj" alt="Video Thumbnail 3" class="uniform-image"> <!-- Video thumbnail -->
+                    <p>Chicken</p> <!-- Video title -->
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+
+<section class="subscribers-section" onclick="location.href='subscribers.html'"> <!-- Clickable section for subscribers -->
+    <h1 onclick="location.href='subscriber.html'">Subscribers</h1> <!-- Heading for subscribers -->
+    <div class="subscribers-grid" id="subscribersGrid">
+        <!-- Sample Subscriber Card -->
+        <div class="subscriber-card"> <!-- Individual subscriber card -->
+            <img src="https://yt3.googleusercontent.com/ytc/AIdro_nfXRvoxu5cFt2H4WhJfFLbL5SVdzmvEnFymnPzH3_1qPM=s160-c-k-c0x00ffffff-no-rj" alt="Subscriber Picture"> <!-- Subscriber picture -->
+            <p>John Doe</p> <!-- Subscriber name -->
+        </div>
+
+        <div class="subscriber-card"> <!-- Individual subscriber card -->
+            <img src="https://yt3.googleusercontent.com/ytc/AIdro_kxxEAZC6PRm4fIqifOfwttzWvJsUPQ2X3tjTkC4E6kdbs=s160-c-k-c0x00ffffff-no-rj" alt="Subscriber Picture"> <!-- Subscriber picture -->
+            <p>John Doe the second</p> <!-- Subscriber name -->
+        </div>
+
+        <div class="subscriber-card"> <!-- Individual subscriber card -->
+            <img src="https://yt3.googleusercontent.com/0qaMB_X7zqDIhN0dDBTDHWd9nL16BXdj2aBPU7a2_7dPWy-4jfI_crVo_TCxGUjW1Twbis_fELs=s160-c-k-c0x00ffffff-no-rj" alt="Subscriber Picture"> <!-- Subscriber picture -->
+            <p>John Doe the third</p> <!-- Subscriber name -->
+        </div>
+    </div>
+</section>
+
+<div class="upload">
+    <h1>Edit your profile!</h1> <!-- Heading for profile editing -->
+    <form action="/upload" method="POST" enctype="multipart/form-data"> <!-- Form to submit profile updates -->
+        <label for="videoTitle">Name:</label>
+        <input type="text" id="videoTitle" name="videoTitle" placeholder="Enter Influencer name:" required> <!-- Input for influencer name -->
+
+        <label for="videoDescription">Description:</label>
+        <textarea id="videoDescription" name="videoDescription" rows="4" placeholder="Enter profile description" required></textarea> <!-- Textarea for profile description -->
+
+        <input type="submit" value="Update Profile"> <!-- Submit button -->
+    </form>
+</div>
+</body>
+</html>
