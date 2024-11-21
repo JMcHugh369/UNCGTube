@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCGTube</title>
+    <link rel="stylesheet" href="indexINFLU.css"> <!-- Link to the external CSS stylesheet -->
+</head>
+<body>
+<header>
+    <h1>UNCGTube</h1> <!-- Main title of the page -->
+    <div class="header-search">
+        <input type="text" placeholder="Search videos..."> <!-- Input field for video search -->
+        <button type="submit">Search</button> <!-- Button to initiate search -->
+    </div>
+
+    <div class="header-profile">
+        <a href="profile.html"><img src="https://static.vecteezy.com/system/resources/thumbnails/047/119/932/small/disco-ball-on-transparent-background-png.png" alt="Profile"></a> <!-- Profile picture linking to the user's profile -->
+    </div>
+</header>
+
+<main>
+    <aside>
+        <h2>Categories</h2> <!-- Sidebar heading -->
+        <ul>
+            <li><a href="videos.html">Videos</a></li> <!-- Link to the videos page -->
+            <li><a href="subscribers.html">Subscribers</a></li> <!-- Link to the subscribers page -->
+            <li><a href="analytics.html">Analytics</a></li> <!-- Link to the analytics page -->
+            <li><a href="profile.html">Profile</a></li> <!-- Link to the profile page -->
+            <li><a href="playlists.html">Playlists</a></li> <!-- Link to the playlists page -->
+        </ul>
+    </aside>
+    <div class="videos uploaded">
+        <div class="influencer-info" onclick="location.href='profile.html'"> <!-- Clickable influencer info section -->
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/047/119/932/small/disco-ball-on-transparent-background-png.png" alt="Profile Picture" class="profile-pic"> <!-- Influencer profile picture -->
+            <div class="influencer-details">
+                <h1 class="influencer-name" th:text="${provider.name}">Disco ball</h1> <!-- Dynamically rendered name -->
+                <p class="influencer-tagline" th:text="${provider.description}">Learn about me and content subscribe and like my videos</p> <!-- Dynamically rendered description -->
+                <p class="influencer-tagline" th:text="${provider.tagline}">I make debate videos</p> <!-- Dynamically rendered tagline -->
+                <p class="influencer-tagline" th:text="${provider.socialMedia.instagram}">Instagram: @Discoball</p> <!-- Dynamically rendered Instagram handle -->
+                <p class="influencer-tagline" th:text="${provider.socialMedia.tiktok}">TikTok: @Discoball</p> <!-- Dynamically rendered TikTok handle -->
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="videos uploaded">
+    <h1>Recent Videos Posted</h1> <!-- Heading for recent videos -->
+    <div class="video-carousel">
+        <div class="video-item" th:each="video : ${provider.videos}" onclick="location.href='video1p1.html'">
+            <img th:src="@{${video.thumbnail}}" alt="Video Thumbnail" class="uniform-image"> <!-- Dynamically rendered video thumbnail -->
+            <p th:text="${video.title}">Debates</p> <!-- Dynamically rendered video title -->
+        </div>
+        <div class="video-item" th:each="video : ${provider.videos}" onclick="location.href='video1p1.html'">
+            <img th:src="@{${video.thumbnail}}" alt="Video Thumbnail" class="uniform-image"> <!-- Dynamically rendered video thumbnail -->
+            <p th:text="${video.title}">Debates</p> <!-- Dynamically rendered video title -->
+        </div>
+        <div class="video-item" th:each="video : ${provider.videos}" onclick="location.href='video1p1.html'">
+            <img th:src="@{${video.thumbnail}}" alt="Video Thumbnail" class="uniform-image"> <!-- Dynamically rendered video thumbnail -->
+            <p th:text="${video.title}">Debates</p> <!-- Dynamically rendered video title -->
+        </div>
+    </div>
+</div>
+
+<section class="playlists">
+    <h2>Your Playlists</h2> <!-- Heading for user playlists -->
+    <div class="playlist">
+        <a href="Intoplaylists.html"> <!-- Link to the playlists page -->
+            <h3 th:text="${provider.playlists[0].title}">Entertainment</h3> <!-- Dynamically rendered playlist title -->
+            <div class="video-carousel">
+                    <div th:each="video : ${videos}" class="video-item" onclick="location.href='/videos/{id}(id=${video.id})'">
+                                    <img th:src="${video.thumbnailUrl}" alt="Video Thumbnail" class="uniform-image">
+                                    <p th:text="${video.title}">Video Title</p>
+                                </div>
+                                <div th:each="video : ${videos}" class="video-item" onclick="location.href='/videos/{id}(id=${video.id})'">
+                                    <img th:src="${video.thumbnailUrl}" alt="Video Thumbnail" class="uniform-image">
+                                    <p th:text="${video.title}">Video Title</p>
+                                </div>
+                                <div th:each="video : ${videos}" class="video-item" onclick="location.href='/videos/{id}(id=${video.id})'">
+                                    <img th:src="${video.thumbnailUrl}" alt="Video Thumbnail" class="uniform-image">
+                                    <p th:text="${video.title}">Video Title</p>
+                                </div>
+                                <!-- Add more video items as needed -->
+            </div>
+        </a>
+    </div>
+</section>
+
+<section class="subscribers-section" onclick="location.href='subscribers.html'">
+    <h1 onclick="location.href='subscriber.html'" th:text="${provider.subscribersCount}">Subscribers</h1> <!-- Dynamically rendered subscriber count -->
+    <div class="subscribers-grid" id="subscribersGrid">
+        <div th:each="subscriber : ${provider.subscribers}" class="subscriber-card">
+            <img th:src="@{${subscriber.profilePicture}}" alt="Subscriber Picture">
+            <p th:text="${subscriber.name}">John Doe</p>
+        </div>
+    </div>
+    <h1 onclick="location.href='subscriber.html'" th:text="${provider.subscribersCount}">Subscribers</h1> <!-- Dynamically rendered subscriber count -->
+    <div class="subscribers-grid" id="subscribersGrid">
+        <div th:each="subscriber : ${provider.subscribers}" class="subscriber-card">
+            <img th:src="@{${subscriber.profilePicture}}" alt="Subscriber Picture">
+            <p th:text="${subscriber.name}">John Doe</p>
+        </div>
+    </div>
+</section>
+
+<div class="upload">
+    <h1>Edit your profile!</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="videoTitle">Name:</label>
+        <input type="text" id="videoTitle" name="videoTitle" placeholder="Enter Influencer name:" required>
+        <label for="videoDescription">Description:</label>
+        <textarea id="videoDescription" name="videoDescription" rows="4" placeholder="Enter profile description" required></textarea>
+        <input type="submit" value="Update Profile">
+    </form>
+</div>
+</body>
+</html>

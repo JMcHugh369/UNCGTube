@@ -1,6 +1,6 @@
 /* General body styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Comic Neue", cursive;
     margin: 0;
     padding: 0;
     color: #333;
@@ -18,6 +18,14 @@ header {
 header h1 {
     margin: 0;
 }
+
+.center-block {
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjusts to perfectly center */
+}
+
 
 header input[type="text"] {
     width: 50%;
@@ -94,12 +102,36 @@ article p {
     font-family: 'Courier New', Courier, monospace;
     font-style: bold;
     font-weight: 700;
+    position: fixed;
+    font-size: 20px;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    border-right: solid;
+    border-color: black;
+    border-width: 2px;
 }
 
-#sideBarLine {
-    border-bottom: 1px solid #003D6C;
-    height: 4px;
-    width: 25px;
+li {
+    display: block;
+    margin: 0;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.row {
+    border-radius: 5%;
+}
+
+a {
+    padding: 10px;
+    padding-bottom: 30px;
+}
+
+#sideBar a:hover {
+    text-decoration: none;
+    color: white;
 }
 
 #pageTitle {
@@ -146,6 +178,7 @@ article p {
     font-style: italic;
   }
 
+<<<<<<< HEAD
 body {
     background-color: white;
     margin: 0;
@@ -205,3 +238,56 @@ textarea {
     resize: vertical;
 }
 
+=======
+  .login-container {
+    background-color: #fff; /* White background for the form */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+    width: 500px; /* Adjust as needed */
+    height: 500px;
+    text-align: center;
+    position: fixed;
+    left: 25%;
+    top: 25%;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    color: #003D6C; /* UNCG navy text */
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #003366;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #003366;
+
+}
+
+.login-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #FFCC00; /* UNCG gold */
+    color: #003D6C;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.login-container input[type="submit"]:hover {
+    background-color: #e6b800; /* Darker gold on hover */
+}
+
+/* Optional: Placeholder text color */
+input::placeholder {
+    color: #999;
+}
+>>>>>>> b1b9d1b64c48281cfdfddf5fb07c356e7d11519a

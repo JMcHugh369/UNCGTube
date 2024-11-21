@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCGTube</title>
+    <link rel="stylesheet" href="indexINFLU.css">
+</head>
+<body>
+
+<header>
+    <h1>UNCGTube</h1>
+    <div class="header-search">
+        <input type="text" placeholder="Search videos...">
+        <button type="submit">Search</button>
+    </div>
+
+    <div class="header-profile">
+        <a href="profile.html"><img src="https://static.vecteezy.com/system/resources/thumbnails/047/119/932/small/disco-ball-on-transparent-background-png.png" alt="Profile"></a>
+    </div>
+
+</header>
+
+
+
+
+<main>
+    <aside>
+        <h2>Categories</h2>
+        <ul>
+            <li><a href="influencer_home.html">Home</a></li>
+            <li><a href="subscribers.html">Subscribers</a></li>
+            <li><a href="analytics.html">Analytics</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="playlists.html">Playlists</a></li>
+
+        </ul>
+    </aside>
+
+    <div class="videos uploaded">
+        <h1>Videos Posted</h1>
+        <div class="video-carousel">
+            <div class="video-item" onclick="location.href='videoplay.html'">
+                <div th:each="video : ${videos}">
+                    <p th:text="${video.title}"></p>
+                    <a th:href="@{/videos/{id}(id=${video.id})}">View Video</a>
+                </div>
+            </div>
+            <div class="video-item" onclick="location.href='videoplay.html'">
+                <div th:each="video : ${videos}">
+                    <p th:text="${video.title}"></p>
+                    <a th:href="@{/videos/{id}(id=${video.id})}">View Video</a>
+                </div>
+            </div>
+            <div class="video-item" onclick="location.href='videoplay.html'">
+                <div th:each="video : ${videos}">
+                    <p th:text="${video.title}"></p>
+                    <a th:href="@{/videos/{id}(id=${video.id})}">View Video</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="upload">
+    <h1>Upload Your Video</h1>
+    <form th:action="@{/videos/upload/{providerId}(providerId=${providerId})}" method="POST" enctype="multipart/form-data">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <label for="videoFile">Choose Video File:</label>
+        <input type="file" id="videoFile" name="videoFile" accept="video/*" required>
+
+        <button type="submit">Upload Video</button>
+    </form>
+</div>
+
+
+
+</body>
+</html>

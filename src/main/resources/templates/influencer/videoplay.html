@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNCGTube - Video</title>
+  <link rel="stylesheet" href="indexINFLU.css">
+</head>
+<body>
+<header>
+  <h1>UNCGTube</h1>
+  <div class="header-search">
+    <input type="text" placeholder="Search videos...">
+    <button type="submit">Search</button>
+  </div>
+
+  <div class="header-profile">
+    <a href="profile.html"><img src="https://static.vecteezy.com/system/resources/thumbnails/047/119/932/small/disco-ball-on-transparent-background-png.png" alt="Profile"></a>
+  </div>
+</header>
+
+<main>
+  <aside>
+    <h2>Categories</h2>
+    <ul>
+      <li><a href="influencer_home.html">Home</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="subscribers.html">Subscribers</a></li>
+      <li><a href="analytics.html">Analytics</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+  </aside>
+
+  <!-- Video Player Section -->
+  <section class="video-player-container">
+    <div class="video-container">
+      <!-- Display video -->
+      <video controls>
+        <source th:src="@{${video.url}}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="video-details">
+        <!-- Display video title -->
+        <h2 th:text="${video.title}">Video Title</h2>
+        <p>Views: <span th:text="${video.viewCount}">0</span></p>
+        <div class="like-dislike-buttons">
+          <button class="like-button" onclick="likeVideo(${video.id})">Like</button>
+          <button class="dislike-button" onclick="dislikeVideo(${video.id})">Dislike</button>
+        </div>
+      </div>
+
+      <!-- Comment Section -->
+      <div class="comment-section">
+        <h3>Comments</h3>
+        <textarea placeholder="Add a public comment..." id="commentText"></textarea>
+        <button type="submit" onclick="submitComment(${video.id})">Comment</button>
+
+        <ul>
+          <!-- Loop through comments and display them -->
+          <li th:each="comment : ${video.comments}">
+            <strong th:text="${comment.userName}">User</strong>: <span th:text="${comment.content}">Great video!</span>
+
+            <!-- Reply button -->
+            <button class="reply-button" onclick="replyToComment(${comment.id})">Reply</button>
+            <button class="report-button">Report</button>
+
+            <ul class="reply-list">
+              <!-- Loop through replies -->
+              <li th:each="reply : ${comment.replies}">
+                <strong th:text="${reply.userName}">User</strong>: <span th:text="${reply.content}">Thanks!</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <script>
+        function replyToComment(commentId) {
+          const replyContent = prompt("Enter your reply:");
+          if (replyContent) {
+            fetch(`/comments/reply/${commentId}`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ content: replyContent })
+            }).then(response => response.json())
+              .then(data => {
+                alert("Reply added");
+                location.reload(); // Reload to show the new reply
+              });
+          }
+        }
+      </script>
+
+
+    </div>
+  </section>
+
+  <section class="suggested">
+<!--    <div class="Popular Videos">-->
+<!--      <h3>Suggested Videos</h3>-->
+<!--      <div class="video-card" th:each="suggestedVideo : ${suggestedVideos}">-->
+<!--        <a href="/videos/watch/{suggestedVideo.id}">-->
+<!--          <img th:src="@{${suggestedVideo.thumbnail}}" alt="Video thumbnail" class="uniform-image">-->
+<!--          <div class="video-info">-->
+<!--            <h4 th:text="${suggestedVideo.title}">Suggested Video Title</h4>-->
+<!--            <p th:text="'Views: ' + ${suggestedVideo.viewCount}">Views: 0</p>-->
+<!--          </div>-->
+<!--        </a>-->
+<!--      </div>-->
+<!--    </div>-->
+  </section>
+</main>
+
+<script>
+  // Example functions for liking/disliking and submitting comments
+  function likeVideo(videoId) {
+    // Call backend API to increment like count
+    alert("Liked video with ID: " + videoId);
+  }
+
+  function dislikeVideo(videoId) {
+    // Call backend API to increment dislike count
+    alert("Disliked video with ID: " + videoId);
+  }
+
+  function submitComment(videoId) {
+    const commentText = document.getElementById("commentText").value;
+    if (commentText) {
+      alert("Submitted comment: " + commentText);
+      // Call backend API to submit the comment (e.g., using AJAX or form submission)
+    }
+  }
+</script>
+
+</body>
+</html>

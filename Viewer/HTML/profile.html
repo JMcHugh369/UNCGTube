@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCGTube</title>
+    <link rel="stylesheet" href="../CSS/profile.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">UNCGTube</div>
+            <ul class="nav-links">
+                <li><a href="viewer_home.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="subscriptions.html">Subscriptions</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="../HTML/likedVids.html">Liked Videos</a></li>
+                <li><a href="trending.html">Trending</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="profile" class="profile-section">
+        <h1>User Profile</h1>
+        
+        <!-- Profile Picture Section -->
+        <div class="profile-pic-section">
+            <h2>Profile Picture</h2>
+            <img src="images/default-profile.jpg" alt="Profile Picture" class="profile-pic">
+            <form action="#" method="post" enctype="multipart/form-data">
+                <label for="profile-pic-upload" class="profile-pic-label">Update Profile Picture</label>
+                <input type="file" id="profile-pic-upload" name="profile-pic-upload">
+                <button class="submit" type="submit">Upload</button>
+            </form>
+        </div>
+
+        <!-- User Information Section -->
+        <div class="user-info-section">
+            <h2>Personal Information</h2>
+            <form action="#" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="CurrentUsername">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="user@example.com">
+                
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio" rows="4" placeholder="Tell us something about yourself..."></textarea>
+                
+                <button type="submit">Update Information</button>
+            </form>
+        </div>
+
+        <!-- Privacy Settings Section -->
+        <div class="privacy-settings-section">
+            <h2>Privacy Settings</h2>
+            <form action="#" method="post">
+                <label for="visibility">Profile Visibility:</label>
+                <select id="visibility" name="visibility">
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                </select>
+
+                <label for="email-visibility">Show Email:</label>
+                <select id="email-visibility" name="email-visibility">
+                    <option value="show">Show</option>
+                    <option value="hide">Hide</option>
+                </select>
+                <button type="submit">Update Privacy Settings</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 UNCG Tube</p>
+    </footer>
+</body>
+</html>
