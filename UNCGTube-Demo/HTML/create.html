@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCGTube</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<main>
+    <aside>
+        <h2>Categories</h2>
+        <ul>
+            <li><a href="influencer_home.html">Home</a></li>
+            <li><a href="create.html">Create</a></li>
+            <li><a href="subscribers.html">Subscribers</a></li>
+            <li><a href="analytics.html">Analytics</a></li>
+            <li><a href="posts.html">Posted Videos</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="playlists.html">Playlists</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="help.html">Help</a></li>
+        </ul>
+    </aside>
+</main>
+
+<div class="upload">
+    <h1>Upload Your Video</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="videoTitle">Title:</label>
+        <input type="text" id="videoTitle" name="videoTitle" placeholder="Enter video title" required>
+
+        <label for="videoDescription">Description:</label>
+        <textarea id="videoDescription" name="videoDescription" rows="4" placeholder="Enter video description" required></textarea>
+
+        <label for="videoFile">Choose Video File:</label>
+        <input type="file" id="videoFile" name="videoFile" accept="video/*" required>
+
+        <button type="submit">Upload Video</button>
+    </form>
+</div>
+
+</body>
+</html>

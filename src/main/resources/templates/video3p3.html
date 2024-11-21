@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCGTube</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<header>
+    <h1>UNCGTube</h1>
+    <div class="header-search">
+        <input type="text" placeholder="Search videos...">
+        <button type="submit">Search</button>
+    </div>
+
+    <div class="header-profile">
+        <a href="../../../../../../OneDrive/Assignment04/src/main/resources/templates/profile.html"><img src="https://static.vecteezy.com/system/resources/thumbnails/047/119/932/small/disco-ball-on-transparent-background-png.png" alt="Profile"></a>
+    </div>
+</header>
+
+<main>
+    <aside>
+        <h2>Categories</h2>
+        <ul>
+            <li><a href="influencer_home.html">Home</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="subscribers.html">Subscribers</a></li>
+            <li><a href="analytics.html">Analytics</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </aside>
+
+<section class="video-player-container">
+    <div class="video-container">
+        <img src="https://media.istockphoto.com/id/1066257882/photo/close-up-young-asian-woman-holding-fried-chicken-with-happy-feeling-at-outside-restaurant-for.jpg?s=612x612&w=0&k=20&c=MiqLYCE5GKrj73RbeXrGX4B2VVjV4HvmxaqvnRaDp6o=" alt="Video Thumbnail 3">
+        <div class="video-details">
+            <div class="video-details">
+                <h3>Chicken</h3>
+                <p class="video-description">How to make Yummy Chicken.</p>
+            </div>
+        </div>
+
+        <div class="like-dislike-buttons">
+            <button class="like-button">Like</button> <!-- Button to like the video -->
+            <button class="dislike-button">Dislike</button> <!-- Button to dislike the video -->
+        </div>
+
+        <div class="comment-section">
+            <h3>Comments</h3>
+            <textarea placeholder="Add a public comment..."></textarea>
+            <button type="submit">Comment</button>
+            <ul>
+                <li>
+                    <strong>User1:</strong> Great video! I learned a lot!
+                    <button class="reply-button">Reply</button>
+                    <button class="report-button">Report</button>
+                    <ul class="reply-list">
+                        <li><strong>User2:</strong> Thanks for your feedback!</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>User3:</strong> Can you do a tutorial on searing?
+                    <button class="reply-button">Reply</button>
+                    <button class="report-button">Report</button>
+                    <ul class="reply-list">
+                        <li><strong>User4:</strong> Yes, that would be helpful!</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+<suggested>
+    <div class="suggested-videos">
+        <h3>Suggested Videos</h3>
+        <div class="video-card">
+            <img src="https://www.bates.edu/news/files/2024/01/240115_MLK_Keynote_3701.webp" alt="Video thumbnail">
+            <div class="video-info">
+                <h4>Sophisticated cooking</h4>
+                <p>Views: 1,500</p>
+            </div>
+        </div>
+        <div class="video-card">
+            <img src="https://yt3.googleusercontent.com/d4B1O0xCl6DJx6h1aZLgLWr4MO5h44f-0JL5qosNoejntdVRoW0OKVk1iLIN_65Ghz1wUF0LeiQ=s160-c-k-c0x00ffffff-no-rj" alt="Video thumbnail" class="uniform-image">
+            <div class="video-info">
+                <h4>Pop cultural debates</h4>
+                <p>Views: 1,200</p>
+            </div>
+        </div>
+        <div class="video-card">
+            <img src="https://www.bates.edu/news/files/2024/01/240115_MLK_Keynote_3649.webp" alt="Video thumbnail" class="uniform-image">
+            <div class="video-info">
+                <h4>Sophisticated cooking Part 2!!</h4>
+                <p>Views: 800</p>
+            </div>
+        </div>
+        <div class="video-card">
+            <img src="https://d3i6fh83elv35t.cloudfront.net/static/2024/09/2008-10-03T120000Z_1163716022_GM1E4A30Z0P01_RTRMADP_3_USA-POLITICS-DEBATE-1024x756.jpg" alt="Video thumbnail" class="uniform-image">
+            <div class="video-info">
+                <h4>Biden shaking someones hand</h4>
+                <p>Views: 950</p>
+            </div>
+        </div>
+        <!-- Add more video cards as needed -->
+    </div>
+</suggested>
+</main>
+
+</body>
+</html>

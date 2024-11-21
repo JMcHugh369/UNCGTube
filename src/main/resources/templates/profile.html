@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCGTube</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+<header>
+    <h1>UNCGTube</h1>
+    <div class="header-search">
+        <input type="text" placeholder="Search videos...">
+        <button type="submit">Search</button>
+    </div>
+
+    <div class="header-profile">
+        <a href="profile.html"><img src="https://static.vecteezy.com/system/resources/thumbnails/047/119/932/small/disco-ball-on-transparent-background-png.png" alt="Profile"></a>
+    </div>
+
+</header>
+
+<main>
+    <aside>
+        <h2>Categories</h2>
+        <ul>
+            <li><a href="influencer_home.html">Home</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="subscribers.html">Subscribers</a></li>
+            <li><a href="analytics.html">Analytics</a></li>
+            <li><a href="playlists.html">Playlists</a></li>
+
+        </ul>
+    </aside>
+
+    <div class="videos uploaded">
+        <div class="influencer-info" onclick="location.href='profile.html'">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/047/119/932/small/disco-ball-on-transparent-background-png.png" alt="Profile Picture" class="profile-pic">
+            <div class="influencer-details">
+                <h1 class="influencer-name">Disco ball</h1>
+                <p class="influencer-tagline">Learn about me and content subscribe and like my videos</p>
+                <p class="influencer-tagline">I make debate videos</p>
+                <p class="influencer-tagline">I make cooking videos</p>
+                <p class="influencer-tagline">Follow me on other platforms</p>
+                <p class="influencer-tagline">Instagram: @Discoball</p>
+                <p class="influencer-tagline">TikTok: @Discoball</p>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="videos uploaded">
+        <div class="influencer-info" onclick="location.href='../HTML/loginPage.html'">
+            <div class="influencer-details">
+                <h1 class="influencer-name">Login: </h1>
+                <p class="influencer-tagline">12345@gmail.com</p>
+                <h1 class="influencer-name">Password:</h1>
+                <p class="influencer-tagline">12345</p>
+                <p class="influencer-tagline"> </p>
+                <h1 class="influencer-name">____________</h1>
+                <button type="submit">Logout</button>
+
+
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+<div class="upload">
+    <h1>Edit your profile!</h1>
+    <form th:action="@{/api/providers/{id}(id=${provider.id})}" th:method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" th:value="${provider.name}" required/>
+        </div>
+        <div>
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio" th:value="${provider.bio}" required></textarea>
+        </div>
+        <div>
+            <button type="submit">Save Changes</button>
+        </div>
+    </form>
+</div>
+
+
+<script>
+    // Function to preview the uploaded profile picture
+    const loadFile = (event) => {
+        const image = document.getElementById('profileImage');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+
+    // Form submission logic (to be implemented)
+    document.getElementById('editProfileForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Here you can add code to save the changes, e.g., using AJAX or form submission
+        alert('Profile updated successfully!');
+    });
+</script>
+
+</body>
+</html>

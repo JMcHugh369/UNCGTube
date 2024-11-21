@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCGTube</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+<header>
+    <h1>UNCGTube</h1>
+    <div class="header-search">
+        <input type="text" placeholder="Search videos...">
+        <button type="submit">Search</button>
+    </div>
+
+    <div class="header-profile">
+        <a href="profile.html"><img src="https://static.vecteezy.com/system/resources/thumbnails/047/119/932/small/disco-ball-on-transparent-background-png.png" alt="Profile"></a>
+    </div>
+
+</header>
+
+<main>
+    <aside>
+        <h2>Categories</h2>
+        <ul>
+            <li><a href="influencer_home.html">Home</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="subscribers.html">Subscribers</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="playlists.html">Playlists</a></li>
+
+        </ul>
+    </aside>
+</main>
+
+<mainanalytics>
+<section class="analytics-dashboard">
+    <h2>Channel Analytics</h2>
+    <div class="stats">
+        <div class="stat-item">
+            <h3>Views</h3>
+            <p th:text="${analytics.viewsCount}"></p>
+        </div>
+        <div class="stat-item">
+            <h3>Subscribers</h3>
+            <p th:text="${analytics.subscriberCount}"></p>
+        </div>
+        <div class="stat-item">
+            <h3>Revenue</h3>
+            <p th:text="${analytics.revenue}"></p>
+        </div>
+    </div>
+
+    <h2>Video Performance</h2>
+    <div class="video-performance">
+        <div class="video-card" th:each="video : ${analytics.video}">>
+            <img th:src="@{${video.thumbnail}}" alt="Video Thumbnail" class="uniform-image">
+            <h3 th:text="${video.title}">Video Title</h3>
+            <p th:text="'Views: ' + ${video.viewsCount}">Views count</p>
+            <p th:text="'Watch Time: ' + ${video.watchTime}">Watch Time</p>
+            <p th:text="'Likes: ' + ${video.likeCount}">Likes</p>
+            <p th:text="'Comments: ' + ${video.commentCount}">Comments</p>
+        </div>
+        <div class="video-card" th:each="video : ${analytics.video}">>
+            <img th:src="@{${video.thumbnail}}" alt="Video Thumbnail" class="uniform-image">
+            <h3 th:text="${video.title}">Video Title</h3>
+            <p th:text="'Views: ' + ${video.viewsCount}">Views count</p>
+            <p th:text="'Watch Time: ' + ${video.watchTime}">Watch Time</p>
+            <p th:text="'Likes: ' + ${video.likeCount}">Likes</p>
+            <p th:text="'Comments: ' + ${video.commentCount}">Comments</p>
+        </div>
+        <div class="video-card" th:each="video : ${analytics.video}">>
+            <img th:src="@{${video.thumbnail}}" alt="Video Thumbnail" class="uniform-image">
+            <h3 th:text="${video.title}">Video Title</h3>
+            <p th:text="'Views: ' + ${video.viewsCount}">Views count</p>
+            <p th:text="'Watch Time: ' + ${video.watchTime}">Watch Time</p>
+            <p th:text="'Likes: ' + ${video.likeCount}">Likes</p>
+            <p th:text="'Comments: ' + ${video.commentCount}">Comments</p>
+        </div>
+
+    </div>
+</section>
+</mainanalytics>
+
+</body>
+</html>

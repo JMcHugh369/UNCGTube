@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNCGTube</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+<header>
+    <h1>UNCGTube</h1>
+    <div class="header-search">
+        <input type="text" placeholder="Search videos...">
+        <button type="submit">Search</button>
+    </div>
+
+    <div class="header-profile">
+        <a href="../../../../../../OneDrive/Assignment04/src/main/resources/templates/profile.html"><img src="https://static.vecteezy.com/system/resources/thumbnails/047/119/932/small/disco-ball-on-transparent-background-png.png" alt="Profile"></a>
+    </div>
+
+</header>
+
+<main>
+    <aside>
+        <h2>Categories</h2>
+        <ul>
+            <li><a href="influencer_home.html">Home</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="analytics.html">Analytics</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="playlists.html">Playlists</a></li>
+
+        </ul>
+    </aside>
+
+
+    <section class="subscribers-section" onclick="location.href='subscribers.html'">
+        <h1>Subscribers</h1>
+
+        <div class="search-subscribers">
+            <input type="text" id="subscriberSearch" placeholder="Search subscribers..." onkeyup="filterSubscribers()">
+        </div>
+
+        <div class="subscribers-grid" id="subscribersGrid">
+            <div class="subscriber-card">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_nfXRvoxu5cFt2H4WhJfFLbL5SVdzmvEnFymnPzH3_1qPM=s160-c-k-c0x00ffffff-no-rj" alt="Subscriber Picture">
+                <p>John Doe</p>
+            </div>
+
+            <div class="subscriber-card">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_kxxEAZC6PRm4fIqifOfwttzWvJsUPQ2X3tjTkC4E6kdbs=s160-c-k-c0x00ffffff-no-rj" alt="Subscriber Picture">
+                <p>John Doe the second</p>
+            </div>
+
+            <div class="subscriber-card">
+                <img src="https://yt3.googleusercontent.com/0qaMB_X7zqDIhN0dDBTDHWd9nL16BXdj2aBPU7a2_7dPWy-4jfI_crVo_TCxGUjW1Twbis_fELs=s160-c-k-c0x00ffffff-no-rj" alt="Subscriber Picture">
+                <p>John Doe the third</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script>
+    function filterSubscribers() {
+        const input = document.getElementById('subscriberSearch');
+        const filter = input.value.toLowerCase();
+        const cards = document.getElementsByClassName('subscriber-card');
+
+        for (let i = 0; i < cards.length; i++) {
+            const name = cards[i].getElementsByTagName('p')[0];
+            if (name) {
+                const txtValue = name.textContent || name.innerText;
+                if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                    cards[i].style.display = ''; // Show the card
+                } else {
+                    cards[i].style.display = 'none'; // Hide the card
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

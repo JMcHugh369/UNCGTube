@@ -145,4 +145,63 @@ article p {
     font-weight: 700;
     font-style: italic;
   }
-  
+
+body {
+    background-color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+.upload {
+    max-width: 600px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #003D6C;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    color: #003D6C;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #003D6C;
+    color: #ffcc00;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+button:hover {
+    background-color: #0000AE;
+}
+
+textarea {
+    resize: vertical;
+}
+
